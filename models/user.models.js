@@ -11,6 +11,8 @@ let userschema = new mongoose.Schema({
     },
     email: {
         type : String,  
+        unique: [true, "email is already registared"],
+        lowercase: true
     },
     password: {
         type : String,  
@@ -18,9 +20,6 @@ let userschema = new mongoose.Schema({
     cart: {
         type : Array,  
         default:[]
-    },
-    isadmin: {
-        type : Boolean,  
     },
     orders: {
         type : Array, 
