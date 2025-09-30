@@ -8,7 +8,7 @@ module.exports.signupUser = async function (req, res) {
     let checkUser = await userModel.findOne({ email });
     if (checkUser){
         req.flash("error","Email is already registered");
-             return res.redirect("/");
+             return res.redirect("/shop");
 
     } 
 
