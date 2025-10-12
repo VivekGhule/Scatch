@@ -1,0 +1,80 @@
+<%- include('./partials/header') %>
+
+<!-- Wrapper -->
+<div
+  class="w-full min-h-screen flex flex-col md:flex-row px-4 md:px-16 pt-28 pb-10 bg-gray-50 gap-10"
+>
+  <!-- Sidebar -->
+ 
+
+<!-- Product Container -->
+  <main
+    class="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+  >
+    <% products.forEach(function(product){ %>
+    <div
+      class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+    >
+      <!-- Product Image -->
+      <div
+        class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>] overflow-hidden"
+      >
+        <img
+          class="h-48 hover:scale-110 transition-transform duration-300"
+          src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+          alt=""
+        />
+      </div>
+
+      <!-- Product Info -->
+      <div
+        class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]"
+      >
+        <div>
+          <h3 class="font-medium"><%= product.name %></h3>
+          <h4 class="text-sm">₹ <%= product.price %></h4>
+        </div>
+        <a
+          class="w-8 h-8 flex items-center justify-center rounded-full bg-white shadow hover:scale-125 transition"
+          href=""
+        >
+          <i class="ri-add-line text-gray-800"></i>
+        </a>
+      </div>
+    </div>
+    <% }) %> <% products.forEach(function(product){ %>
+    <div
+      class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+    >
+      <!-- Product Image -->
+      <div
+        class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>] overflow-hidden"
+      >
+        <img
+          class="h-48 hover:scale-110 transition-transform duration-300"
+          src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+          alt=""
+        />
+      </div>
+
+      <!-- Product Info -->
+      <div
+        class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]"
+      >
+        <div>
+          <h3 class="font-medium"><%= product.name %></h3>
+          <h4 class="text-sm">₹ <%= product.price %></h4>
+        </div>
+        <a
+          class="w-8 h-8 flex items-center justify-center rounded-full bg-white shadow hover:scale-125 transition"
+          href=""
+        >
+          <i class="ri-add-line text-gray-800"></i>
+        </a>
+      </div>
+    </div>
+    <% }) %>
+  </main>
+</div>
+
+<%- include('./partials/footer') %>
